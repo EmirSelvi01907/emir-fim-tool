@@ -11,19 +11,18 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 
-# --- LOGLAMA AYARI ---
+
 logging.basicConfig(filename='denetim_sistemi.log', level=logging.INFO, 
                     format='%(asctime)s - %(message)s')
 
-# --- AYARLAR VE RENKLER ---
+
 KIRMIZI = '\033[31m'; YESIL = '\033[32m'; SARI = '\033[33m'
 MAVI = '\033[34m'; CYAN = '\033[36m'; NORMAL = '\033[0m'
 
-# SMTP AYARLARI
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-GONDERICI_MAIL = "emirselvi0@gmail.com"
-GONDERICI_SIFRE = "zppz mcvh vobm oqtq"
+GONDERICI_MAIL = "senin-mailin@gmail.com"
+GONDERICI_SIFRE = "uygulama-sifren-buraya"
 
 def emir_selvi_banner():
     banner = f"""{CYAN}
