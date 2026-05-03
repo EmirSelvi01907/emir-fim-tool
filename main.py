@@ -55,7 +55,7 @@ def mail_gonder(alici_mail, dosya_yolu, cihaz, detay=""):
 def cihaz_bilgisi_al():
     return f"{getpass.getuser()}@{platform.node()}"
 
-# --- ADIM 1: GELİŞMİŞ HASH FONKSİYONU ---
+
 def dosya_bilgisi_al(dosya_yolu, algoritma="sha256"):
     if not os.path.exists(dosya_yolu): return None
     stat_info = os.stat(dosya_yolu)
@@ -109,12 +109,12 @@ def dosya_secici():
                 return sonuclar[int(input(f"\n{CYAN}Seçim: {NORMAL}"))-1]
         elif secim.lower() == 'q': return None
 
-# --- ANA PROGRAM ---
+
 os.system('cls' if os.name == 'nt' else 'clear'); emir_selvi_banner()
 print(f"{SARI}[*] Bildirimlerin gönderileceği e-posta adresini giriniz.{NORMAL}")
 kullanici_email = input(f"{CYAN}E-posta: {NORMAL}")
 
-# ADIM 1: ALGORİTMA SEÇİMİ
+
 print(f"\n{SARI}Kullanılacak Hash Algoritmasını Seçin:{NORMAL}")
 print("1. SHA-256 (Standart)\n2. MD5 (Hızlı)\n3. SHA-512 (Yüksek Güvenlik)")
 algo_sec = input(f"{CYAN}Seçim (1-3): {NORMAL}")
@@ -138,8 +138,8 @@ while True:
         "eski_hash": bilgi["hash"],
         "eski_boyut": bilgi["boyut"],
         "yedek": yedek_dosya,
-        "degisiklik_sayaci": 0,           # ADIM 4 için sayaç
-        "son_degisiklik": time.time()    # ADIM 4 için zaman takibi
+        "degisiklik_sayaci": 0,           
+        "son_degisiklik": time.time()    
     }
 
     veri = {
@@ -158,16 +158,16 @@ while True:
             su_an_str = datetime.now().strftime("%H:%M:%S")
 
             if mevcut_bilgi["hash"] != izleme_listesi[secilen_dosya]["eski_hash"]:
-                # --- ADIM 4: RANSOMWARE ANALİZİ ---
+               
                 gecen_sure = su_an_ts - izleme_listesi[secilen_dosya]["son_degisiklik"]
                 izleme_listesi[secilen_dosya]["degisiklik_sayaci"] += 1
                 
-                # 10 saniye içinde 3'ten fazla değişim varsa alarm ver
+              
                 if izleme_listesi[secilen_dosya]["degisiklik_sayaci"] > 3 and gecen_sure < 10:
                     alert_msg = "!!! KRİTİK: HIZLI DEĞİŞİKLİK TESPİT EDİLDİ! SALDIRI OLABİLİR !!!"
                     print(f"\n{KIRMIZI}{alert_msg}{NORMAL}")
                     mail_gonder(kullanici_email, secilen_dosya, cihaz, alert_msg)
-                    shutil.copy2(yedek_dosya, secilen_dosya) # Otomatik kurtar
+                    shutil.copy2(yedek_dosya, secilen_dosya) 
                     print(f"{YESIL}[+] Güvenlik için otomatik restore edildi.{NORMAL}")
                     time.sleep(5)
                     break
