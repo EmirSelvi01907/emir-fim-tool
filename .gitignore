@@ -1,0 +1,4 @@
+*.log
+*.json
+*.yedek
+__pycache__/
