@@ -41,3 +41,4 @@ python main.py
 
 📜 Lisans
 Bu proje eğitim ve araştırma amaçlıdır. İzinsiz ticari kullanımı önerilmez.# emir-fim-tool
+# emir-fim-tool
