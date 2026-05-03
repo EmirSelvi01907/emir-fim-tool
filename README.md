@@ -27,7 +27,7 @@ Yazılım, dosya üzerindeki değişikliklerin sıklığını takip eder. Eğer 
 
 1. Repoyu klonlayın:
 ```bash
-git clone [https://github.com/emirefeselvi/fim-tool.git](https://github.com/emirefeselvi/fim-tool.git)
+git clone https://github.com/EmirSelvi01907/emir-fim-tool.git
 ```
 
 2. Gerekli Python kütüphanelerinin yüklü olduğundan emin olun (Standart kütüphaneler kullanılmıştır).
@@ -38,3 +38,6 @@ git clone [https://github.com/emirefeselvi/fim-tool.git](https://github.com/emir
 ```bash
 python main.py
 ```
+
+📜 Lisans
+Bu proje eğitim ve araştırma amaçlıdır. İzinsiz ticari kullanımı önerilmez.# emir-fim-tool
